@@ -2,9 +2,10 @@ body {
     font-family: Arial, sans-serif;
 }
 .cvAsImage{
-    width: 400px;
+    width: 100%;
     height: auto;
-    background-color: #00ffdd;
+    display: flex;
+    background-color: #f1f3f3;
 }
 #imagePreview{
     width: 100%;
@@ -128,13 +129,18 @@ body {
 }
 
 /* this div use fore add new forme  */
-.my_class{
+.my_class .my_class_right{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     height: auto;
     margin-top: 5%;
 }
+/* .my_class_right{
+    border:  2px solid black;
+    width: 100%;
+    height: 10px;
+} */
 
 /* this use fore  change button in newform */
 .button-group_2{
@@ -263,7 +269,7 @@ border: 2px solid blue;
 
 
 /* list add and list create button  */
-#listAddButton , #removeListButton{
+#listAddButton , #removeListButton ,#listAddButtonToRight , #removeListButtonRigth{
     width: 40%;
     text-align: center;
     background-color: #ffffff;
@@ -309,7 +315,7 @@ border: 2px solid blue;
 }
 .leftSide{
 
-    width: 50%;
+    width: 140%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -322,10 +328,29 @@ border: 2px solid blue;
   text-decoration: underline ;
 }
 .rightSide{
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: yellow;
     height: auto;
+}
+
+/* cv ass image aerea */
+.cvAsIUmageArea{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+
+    background-color: blue;
+    height: auto;
+   
+    transform: scale(0.7);
+}
+.diplayCvImg{
+    width: auto;
+    height: auto;
+    border: 3px solid black;
 }

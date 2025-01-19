@@ -1,6 +1,16 @@
 
 /* this is  CV conten style ======================================================================*/
 
+
+.proifile p{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    text-wrap: inherit;
+}
+
 /* this use fore persanal contact topic */ 
 #contctListTopic{
     
@@ -85,7 +95,7 @@
     display: flex;
     margin: 0 10px;
 }
-.leftDetails{
+.leftDetails .rightDetails{
     background-color: #4caf50;
     width: 100%;
     display: flex;
@@ -113,6 +123,7 @@
     height: auto;
     display: flex;
     width: 70%;
+    padding: 40px;
     background-color: blue;
     
 }
