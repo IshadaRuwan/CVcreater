@@ -1,0 +1,105 @@
+     <!DOCTYPE html>
+<head>
+
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .page1{
+      height: 842px;
+    }
+    .pageLeft{
+      display: flex;
+      position: relative;
+      float: left;
+      background-color: rgb(137, 153, 167);
+      width: 30%;
+      height: 100%;
+    }
+    .design{
+      margin-top: -10%;
+      background-color: rgb(42, 42, 95);
+      height: 17%;
+      border-bottom-left-radius: 40% 50%;
+      border-bottom-right-radius: 40% 50%;
+      
+    }.design h3{
+      padding-top: 10%;
+      text-align: center;
+      color: white;
+    }
+    .profImage{
+    
+      margin-left: 30%;
+      margin-top: -25%;
+      background-image: url("profileImg.jpg");
+      background-size: 100%;
+      width: 50%;
+      height: 12%;
+      border: 4px solid white;
+      background-repeat: none;
+      background-position: center;
+      border-radius: 50%;
+    }
+    .pageRigth{
+      float: inline-end;
+      background-color: white;
+      width: 70%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="page1" id="cv-content">
+    
+    <div class="pageLeft">
+      <div class="design">
+          <h3>ISADA RUWAN SANKALPA</h3>
+      </div>
+      <div class="profImage">
+
+      </div>
+      <div class="contac">
+
+      </div>
+      <div class="content1">
+
+      </div>
+      <div class="content2">
+
+      </div>
+
+    </div>
+    <div class="pageRigth">
+      <div class="profile">
+
+      </div>
+      <div class="education">
+
+      </div>
+      <div class="project"></div>
+
+    </div>
+
+   
+    
+
+  </div>
+  <button id="download-cv">Download CV</button>
+
+  <script>
+    document.getElementById("download-cv").addEventListener("click", function () {
+         const element = document.getElementById("cv-content");
+         const options = {
+              margin: -7.7 ,
+             filename: 'cv.pdf',
+             image: { type: 'jpeg', quality: 1},
+             html2canvas: { scale: 1 },
+             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+         };
+         html2pdf().set(options).from(element).save();
+     }); 
+ </script>
+
+</body>

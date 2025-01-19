@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+        #cv-preview {
+            text-align: center; /* Center the preview container */
+        }
+        #cv-content {
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            margin: 0 auto; /* Center horizontally in the container */
+            background-color: #fff; /* Ensure white background */
+            border: 1px solid #ccc; /* Optional border for visual clarity */
+            box-sizing: border-box; /* Include padding in dimensions */
+            display: flex; /* Flexbox for vertical centering */
+            
+        }
+        
+        .hidden {
+            display: none; /* Hide elements */
+        }
+        
+        body {
+            font-family: Arial, sans-serif; /* Ensure a clean font */
+            background-color: #f4f4f4; /* Light background for contrast */
+            margin: 0;
+            padding: 0;
+        }
+         
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>CV Creator</h1>
+        <form id="cv-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="3" required></textarea>
+
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" name="experience" rows="3" required></textarea>
+
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="3" required></textarea>
+
+            <button type="button" id="generate-cv">Generate CV</button>
+        </form>
+
+        <div id="cv-preview" class="hidden">
+            <h2>CV Preview</h2>
+            <div id="cv-content">
+                <div class="content">
+                    <div id="NAME"></div>
+                </div>
+            </div>
+            <button id="download-cv">Download CV</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("generate-cv").addEventListener("click", function () {
+            /* const cvContent = `
+                <h1>${document.getElementById("name").value}</h1>
+                <p><strong>Email:</strong> ${document.getElementById("email").value}</p>
+                <p><strong>Phone:</strong> ${document.getElementById("phone").value}</p>
+                <p><strong>Address:</strong> ${document.getElementById("address").value}</p>
+                <p><strong>Education:</strong> ${document.getElementById("education").value}</p>
+                <p><strong>Work Experience:</strong> ${document.getElementById("experience").value}</p>
+                <p><strong>Skills:</strong> ${document.getElementById("skills").value}</p>
+            `; */
+        
+            // Open a new tab
+            const newWindow = window.open('', '_blank');
+            
+            // Write the content to the new tab
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>CV Preview</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 20px;
+                            background-color: #f4f4f4;
+                        }
+                        .content {
+                            width: 794px;
+                            margin: 0 auto;
+                            padding: 20px;
+                            background-color: #fff;
+                            border: 1px solid #ccc;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            box-sizing: border-box;
+                        }
+                        h1 {
+                            text-align: center;
+                        }
+                    </style>
+                </head>
+                <body>
+                     <div id="cv-preview" class="hidden">
+                        <h2>CV Preview</h2>
+                        <div id="cv-content">
+                            <div class="content">
+                                <div id="NAME"></div>
+                            </div>
+                        </div>
+                        <button id="download-cv">Download CV</button>
+                    </div>
+
+                    <script>
+                         document.getElementById("download-cv").addEventListener("click", function () {
+                        const element = document.getElementById("cv-content");
+                        const options = {
+                            margin: -7.7 ,
+                            filename: 'cv.pdf',
+                            image: { type: 'jpeg', quality: 1},
+                            html2canvas: { scale: 1 },
+                            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                        };
+                        html2pdf().set(options).from(element).save();
+                    }); 
+                    </script>
+                </body>
+                </html>
+            `);
+        
+            // Focus on the new tab
+            newWindow.document.close();
+            newWindow.focus();
+        });
+        
+        
+        
+        
+       /* document.getElementById("download-cv").addEventListener("click", function () {
+            const element = document.getElementById("cv-content");
+            const options = {
+                margin: 0, // No additional margins
+                filename: 'cv.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2 }, // Higher resolution for sharpness
+                jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+        });*/
+        
+    </script>
+</body>
+
+
+
+
+</html>  
+

@@ -1,0 +1,201 @@
+
+/* this is  CV conten style ======================================================================*/
+
+/* this use fore persanal contact topic */ 
+#contctListTopic{
+    
+    box-sizing: border-box; 
+    height: auto; 
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-weight: bold;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden; 
+    max-width: 100%;
+    margin: 10px 15px;
+    border-bottom: 4px solid white;   
+    font-weight: bold;
+}
+.cvEntry{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f00000;
+}
+
+.iconClone{
+    font-size: 20px;
+}
+.oneContact{
+    display: flex;
+    align-items: center;
+    margin: 10px 15px;
+    border: 1px solid blue;
+}
+.oneContact span{
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden; 
+    
+}
+.my_class{
+ border: 1px solid rgb(142, 210, 255);
+
+}
+.p_detail{
+    display: flex;
+    color: white;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden; 
+    border: 1px solid red;
+    margin:2px 10px;
+
+
+}
+.dive_CV{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border:  1px solid rgb(0, 255, 0);
+}
+.CV_Details_title{
+    box-sizing: border-box; 
+    height: auto; 
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    font-weight: bold;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden; 
+    max-width: 100%;
+    margin: 5px 10px;
+    border-bottom: 4px solid white;   
+    font-weight: bold;
+    
+}
+
+.listName{
+    display: flex;
+    margin: 0 10px;
+}
+.leftDetails{
+    background-color: #4caf50;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* CV space style  */
+#content {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    /* height: auto; */
+    height: 1054px;
+    
+}
+.left{
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    width: 30%;
+    background-color: red;
+    height: auto;
+}
+.right{
+    height: auto;
+    display: flex;
+    width: 70%;
+    background-color: blue;
+    
+}
+.page{
+    width: 70%;
+    margin: 20px auto;
+    
+}
+
+.color{
+    
+    width: 100%;
+    height: 150px;
+    background-color: rgb(98, 0, 255);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    #name{
+        font-size: 20px;
+        font-weight: bold;
+        color: antiquewhite;
+    }
+    
+}
+.colerCurve{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 4, 255);
+    border-radius: 0 0 80% 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.color2 {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+    margin-top: auto;
+    margin-bottom: 0;
+        div{
+            width: 100%;
+        height: 70%;
+        background-color: rgb(255, 0, 0);
+        border-radius: 0 0 80% 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        }
+    
+}
+
+.profileImg{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    background-image: url("https://via.placeholder.com/100"); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: -75px auto 0;
+    border: 3px solid white;
+
+
+
+}  
+.image{
+    display: flex;
+    background-color: rgb(189, 31, 162);
+    flex-direction: column;
+
+} 
+.contact-lis{
+    display: flex;
+    flex-direction: column;
+    
+}  
+.contact-item{
+    margin: 10px;
+
+}     

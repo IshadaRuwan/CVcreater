@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+          }
+      
+          #cv-content {
+            margin: 0;
+            padding: 0;
+              width: 100%;
+              height: 100%;
+              background-color: blue;
+          }
+      
+          h1, p {
+            margin: 0;
+            padding: 10px;
+          }
+      
+          .section {
+            margin-bottom: 20px;
+          }
+      
+          .profImage {
+            width: 100px;
+            height: 100px;
+            background-image: url("https://via.placeholder.com/100"); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            border: 4px solid white;
+          }
+        
+        .hidden {
+            
+        }
+        
+        
+         
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>CV Creator</h1>
+        <form id="cv-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="3" required></textarea>
+
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" name="experience" rows="3" required></textarea>
+
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="3" required></textarea>
+
+            <button type="button" id="generate-cv">Generate CV</button>
+        </form>
+
+        <div id="cv-preview" class="hidden">
+            <h2>CV Preview</h2>
+            <div id="cv-content">
+                <h1>ISADA RUWAN SANKALPA</h1>
+                <div class="profImage"></div>
+                <div class="section">
+                  <h4>Profile</h4>
+                  <p>A brief introduction about yourself.</p>
+                </div>
+                <div class="section">
+                  <h4>Education</h4>
+                  <p>Details about your educational background.</p>
+                </div>
+                <div class="section">
+                  <h4>Projects</h4>
+                  <p>Details about your key projects.</p>
+                </div>
+              </div>
+            <button id="download-cv">Download CV</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("generate-cv").addEventListener("click", function () {
+            const cvContent = `
+                <h1>${document.getElementById("name").value}</h1>
+                <p><strong>Email:</strong> ${document.getElementById("email").value}</p>
+                <p><strong>Phone:</strong> ${document.getElementById("phone").value}</p>
+                <p><strong>Address:</strong> ${document.getElementById("address").value}</p>
+                <p><strong>Education:</strong> ${document.getElementById("education").value}</p>
+                <p><strong>Work Experience:</strong> ${document.getElementById("experience").value}</p>
+                <p><strong>Skills:</strong> ${document.getElementById("skills").value}</p>
+            `;
+            document.getElementById("NAME").innerHTML = document.getElementById("name").value;    
+            //document.getElementById("cv-content").innerHTML = cvContent; 
+            document.getElementById("cv-preview").classList.remove("hidden");
+        });
+        
+        /* document.getElementById("download-cv").addEventListener("click", function () {
+            const element = document.getElementById("cv-content");
+            const options = {
+                 margin: -7.7 ,
+                filename: 'cv.pdf',
+                image: { type: 'jpeg', quality: 1},
+                html2canvas: { scale: 1 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+        });  */
+       
+       /* document.getElementById("download-cv").addEventListener("click", function () {
+            const element = document.getElementById("cv-content");
+            const options = {
+                margin: [-125, 0.0, 0, -50],
+                filename: 'cv.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2 }, // Higher resolution for sharpness
+                jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+        });  */
+
+        document.getElementById("download-cv").addEventListener("click", function () {
+            const element = document.getElementById("cv-content");
+            const options = {
+                margin: 0,
+              filename: 'cv.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 3, useCORS: true },
+              jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait' }
+            };
+      
+            // Generate and download the PDF
+            html2pdf().set(options).from(element).save().catch(error => console.error("Error generating PDF:", error));
+          });
+        
+
+        /*document.getElementById("download-cv").addEventListener("click", function () {
+            const element = document.getElementById("cv-content");
+            const options = {
+                margin: -7.7, // Adjust as needed
+                filename: 'cv.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2, useCORS: true }, // Higher scale for better quality
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }, // Ensure A4
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] } // Ensures proper page breaks
+            };
+            html2pdf().set(options).from(element).save();
+        });*/
+
+    </script>
+</body>
+</html>
+
+
