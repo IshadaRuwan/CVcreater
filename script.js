@@ -48,6 +48,24 @@ const observer = new MutationObserver(() => {
 // Observe the content element for changes
 observer.observe(content, { childList: true, subtree: true });
 
+//chnage profle TITle
+const contactTopicProflr =document.getElementById("profilNam");
+const contactTopicProfle = document.getElementById("profileName")
+contactTopicProflr.addEventListener("input",function(){
+    if(contactTopicProflr==''){
+        contactTopicProfle.style("display:none");
+    }
+    contactTopicProfle.innerHTML=contactTopicProflr.innerHTML;
+});
+
+//change Profl NAme 
+const contactTopicProflrP =document.getElementById("profileDetaislCv");
+const contactTopicProfleP = document.getElementById("profileDetaisl")
+contactTopicProflrP.addEventListener("input",function(){
+    contactTopicProfleP.innerHTML=contactTopicProflrP.innerHTML;
+});
+
+
 
 //this use for edidt persanal details topic as youer choice=====================================
 const contactTopicForm =document.getElementById("PerDet");
@@ -61,7 +79,7 @@ const contactTopicCvname = document.getElementById("name")
 
 
 myname.addEventListener("input",function(){
-    myname.innerHTML=contactTopicCvname.innerHTML;
+    contactTopicCvname.innerHTML=myname.innerHTML;
 });
 
 // create add icon and contact to person details==============================

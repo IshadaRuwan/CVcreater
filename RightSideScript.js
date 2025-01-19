@@ -2,6 +2,8 @@ let formCount2=0;
 let listCount=0;
 let buttonIdCount = 0;
 
+
+
 //add list to right side===========================================================================================
 
 document.getElementById("listAddButtonToRight").addEventListener("click", function(){
