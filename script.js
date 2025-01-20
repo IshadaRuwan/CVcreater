@@ -5,22 +5,59 @@ let divCount1=0;
 let divCount2=0;
 
 
+//coloer chnage 
+
+document.getElementById("changeColorButton-r").addEventListener("click", function () {
+    // Change the main colors dynamically
+    document.documentElement.style.setProperty('--main-color', 'rgb(63, 4, 4)');  
+    document.documentElement.style.setProperty('--main-color2', 'rgb(219, 161, 161)'); 
+    document.documentElement.style.setProperty('--main-color3', 'rgba(63, 4, 4, 0.616)');
+    document.documentElement.style.setProperty('--main-color4', ' rgb(99, 99, 99);');
+});
+
+document.getElementById("changeColorButton-b").addEventListener("click", function () {
+    // Change the main colors dynamically
+    document.documentElement.style.setProperty('--main-color', 'rgb(12, 12, 61)');  // New background color
+    document.documentElement.style.setProperty('--main-color2', 'rgb(155, 218, 255)'); // New text color
+    document.documentElement.style.setProperty('--main-color3', 'rgba(12, 12, 61, 0.795)'); 
+    document.documentElement.style.setProperty('--main-color4 ', 'rgb(99, 99, 99)');
+});
+
+document.getElementById("changeColorButton-g").addEventListener("click", function () {
+    // Change the main colors dynamically
+    document.documentElement.style.setProperty('--main-color', 'rgb(8, 59, 12)');  // New background color
+    document.documentElement.style.setProperty('--main-color2', 'rgb(173, 219, 161)'); // New text color
+    document.documentElement.style.setProperty('--main-color3', 'rgba(8, 59, 12, 0.582)'); 
+    document.documentElement.style.setProperty('--main-color4', ' rgb(39, 39, 39)');
+});
+
+document.getElementById("changeColorButton-y").addEventListener("click", function () {
+    // Change the main colors dynamically
+    document.documentElement.style.setProperty('--main-color', 'rgb(0, 0, 0)');  // New background color
+    document.documentElement.style.setProperty('--main-color2', 'rgb(175, 175, 175)'); // New text color
+    document.documentElement.style.setProperty('--main-color3', 'rgba(0, 0, 0, 0.719)');
+    document.documentElement.style.setProperty('--main-color4', 'rgb(82, 82, 82)');
+});
+
+
+
+
+
+
+
 // show CV as image in opnther place 
-// const source = document.getElementById("content");
-// const scaledContent = document.getElementById("diplayCvImg");
-// const clone = source.cloneNode(true);
-// scaledContent.appendChild(clone);
+function showCvAsImage() {
 
+    const cvContent = document.getElementById("content");
 
-
-    // const source = document.getElementById("content");
-    // const display = document.getElementById("displayArea");
-
-    // // Move the content
-    // display.innerHTML = '';
-    // display.appendChild(source);
-
-
+    // Use html2canvas to capture the CV as an image
+    html2canvas(cvContent).then(canvas => {
+        // Display the image in the preview section
+        const imagePreview = document.getElementById("imagePreview");
+        imagePreview.innerHTML = ""; // Clear any previous content
+        imagePreview.appendChild(canvas);
+    });
+}
 
 // containt CV height chnage 
 const content = document.getElementById("content");
@@ -48,22 +85,25 @@ const observer = new MutationObserver(() => {
 // Observe the content element for changes
 observer.observe(content, { childList: true, subtree: true });
 
+const profileDiv = document.getElementById("proifile")
+
 //chnage profle TITle
 const contactTopicProflr =document.getElementById("profilNam");
 const contactTopicProfle = document.getElementById("profileName")
 contactTopicProflr.addEventListener("input",function(){
-    if(contactTopicProflr==''){
-        contactTopicProfle.style("display:none");
-    }
-    contactTopicProfle.innerHTML=contactTopicProflr.innerHTML;
-});
+    
+        contactTopicProfle.innerHTML=contactTopicProflr.innerHTML
+        showCvAsImage()
+   });
 
 //change Profl NAme 
 const contactTopicProflrP =document.getElementById("profileDetaislCv");
 const contactTopicProfleP = document.getElementById("profileDetaisl")
 contactTopicProflrP.addEventListener("input",function(){
-    contactTopicProfleP.innerHTML=contactTopicProflrP.innerHTML;
-});
+    
+        contactTopicProfleP.innerHTML=contactTopicProflrP.innerHTML
+        showCvAsImage()
+    });
 
 
 
@@ -72,6 +112,7 @@ const contactTopicForm =document.getElementById("PerDet");
 const contactTopicCv = document.getElementById("contctListTopic")
 contactTopicForm.addEventListener("input",function(){
     contactTopicCv.innerHTML=contactTopicForm.innerHTML;
+    showCvAsImage()
 });
 
 const myname = document.getElementById("nameInput");
@@ -79,7 +120,8 @@ const contactTopicCvname = document.getElementById("name")
 
 
 myname.addEventListener("input",function(){
-    contactTopicCvname.innerHTML=myname.innerHTML;
+    contactTopicCvname.innerHTML=myname.value;
+    showCvAsImage()
 });
 
 // create add icon and contact to person details==============================
@@ -182,6 +224,7 @@ function contactEnter(type) {
         }
 
     });
+    showCvAsImage()
 
     
 }
@@ -232,6 +275,7 @@ function addAllCntactToCV() {
     if (!cvContent.children.length) {
         alert("Please enter at least one valid input to add to the CV.");
     }
+    showCvAsImage()
 }
 //remov last enterd contact
 function removeAllCntactFromCV() {
@@ -243,6 +287,7 @@ function removeAllCntactFromCV() {
         cvContent.removeChild(lastDiv);
    
 }
+showCvAsImage()
 };
 
 
@@ -347,6 +392,7 @@ document.getElementById("listAddButton").addEventListener("click", function(){
         newForm.insertBefore(newText, buttonContainer);
     
         count1++;
+        showCvAsImage()
     
     });
     
@@ -360,6 +406,7 @@ document.getElementById("listAddButton").addEventListener("click", function(){
                 lastInput.remove();
             }
         }
+        showCvAsImage()
 
     });
 
@@ -410,6 +457,7 @@ document.getElementById("listAddButton").addEventListener("click", function(){
         if (lastDiv) {
             container2.removeChild(lastDiv);
         }
+        showCvAsImage()
     });
 
 
@@ -444,6 +492,7 @@ function removeList(){
         if(lastDiv){
             container2.removeChild(lastDiv);
         }
+        showCvAsImage()
    
 }
 //===============================================================================================================
@@ -451,12 +500,12 @@ function removeList(){
 
 //add list to right side===========================================================================================
 
-document.getElementById("listAddButtonToRight").addEventListener("click", function(){
+document.getElementById("listAddButton").addEventListener("click", function(){
     let count1=0;
     // create new div class  to adde forme
-    const container = document.getElementById("rightSide");
+    const container = document.getElementById("leftSide");
     const newDiv = document.createElement("div");
-    const listAddButtonDiv = document.getElementById("listAddBttonDivToRight");
+    const listAddButtonDiv = document.getElementById("listAddButton");
     newDiv.id = "newDiv_"+formCount1;
     newDiv.classList.add("my_class");
     container.insertBefore(newDiv,listAddButtonDiv);
@@ -541,6 +590,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
         newForm.insertBefore(newText, buttonContainer);
     
         count1++;
+        showCvAsImage()
     
     });
     
@@ -554,7 +604,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
                 lastInput.remove();
             }
         }
-
+        showCvAsImage()
     });
 
     //add list deta to cv==============================================================================================
@@ -604,6 +654,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
         if (lastDiv) {
             container2.removeChild(lastDiv);
         }
+        showCvAsImage()
     });
 
 
@@ -635,7 +686,7 @@ function removeList(){
           if(lastDiv){
               container2.removeChild(lastDiv);
           }
-     
+          showCvAsImage()
   }
 // =====================================================================================================================
 
@@ -702,4 +753,191 @@ document.getElementById('download').addEventListener('click', function () {
     
     // Convert the element to PDF
     html2pdf().set(opt).from(element).save();
+});
+
+
+
+//===============================================================================================================================
+
+
+
+let formCount2=0;
+let listCount3=0;
+let buttonIdCount2 = 0;
+
+
+
+//add list to right side===========================================================================================
+
+document.getElementById("listAddButtonToRight").addEventListener("click", function(){
+    let count1=0;
+    // create new div class  to adde forme
+    const container = document.getElementById("rightSide");
+    const newDiv = document.createElement("div");
+    const listAddButtonDiv = document.getElementById("listAddBttonDivToRight");
+    newDiv.id = "newDiv2_"+formCount2;
+    newDiv.classList.add("my_class");
+    container.insertBefore(newDiv,listAddButtonDiv);
+
+    // create new fome
+    const newForm = document.createElement("form");
+    newForm.classList.add("newfrom");
+    newForm.id = "form2_"+formCount2;
+    console.log('forme    s00 id',newForm.id);
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.classList.add("listName")
+    input.placeholder= "ENTER THE LISTNAME";
+    input.id = `list2${listCount3}`;
+    console.log("input ID ",input.id);
+
+    const button = document.createElement("button");
+    button.textContent = "+";
+    button.classList.add("add_button");
+    button.style.float="left";
+    button.id = "button2_"+buttonIdCount2;
+    console.log("add button iD",button.id);
+
+    const remButton = document.createElement("button");
+    remButton.textContent = "-";
+    remButton.classList.add("rem_button");
+    remButton.id = "remButton2_"+buttonIdCount2;
+    console.log("remove button id",remButton.id);
+
+    const addToCv = document.createElement("button");
+    addToCv.textContent = "ADD DETAILS TO CV";
+    addToCv.classList.add("addToCv");
+    addToCv.id = "addToCv2_"+buttonIdCount2;
+    console.log("addToCv_ button id",remButton.id);
+
+    const removeFromCv = document.createElement("button");
+    removeFromCv.textContent = "REMOVE LAST FROM CV";
+    removeFromCv.classList.add("removeFromCv");
+    removeFromCv.id = "removeFromCv2_" + buttonIdCount2;
+
+    
+
+
+    // Create a container div for the buttons
+    const buttonContainer = document.createElement("div");
+    const buttonContainer2 = document.createElement("div");
+
+    buttonContainer2.classList.add("button-group_2");
+    buttonContainer.classList.add("button-group");
+
+    // Append buttons to the button container
+    buttonContainer.appendChild(button);
+    buttonContainer.appendChild(remButton);
+    buttonContainer2.appendChild(addToCv);
+    buttonContainer2.appendChild(removeFromCv);
+
+    // Append the button container to the form
+    newForm.appendChild(input);
+
+    newForm.appendChild(buttonContainer);
+    newForm.appendChild(buttonContainer2)
+
+
+
+    
+    
+
+    
+    
+    newDiv.appendChild(newForm);
+
+    // add input are to list==============================================================
+    button.addEventListener("click",function(event){
+        
+
+        event.preventDefault();
+        const listName = input.value;
+        const newText = document.createElement("input");
+    
+        newText.type="Text";
+        newText.classList.add("details");
+        newText.placeholder= (listName==="")? "Enter List Details" :"Enter your "+listName;
+        newText.id = 'details_'+listCount3+count1;
+        console.log(newText.id);
+            
+        newForm.insertBefore(newText, buttonContainer);
+    
+        count1++;
+        showCvAsImage()
+    
+    });
+    
+    //remove inputs ============================================================
+    remButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        const inputs = newForm.querySelectorAll("input[type='text']");
+        if (inputs.length > 1) { // Ensure the main input field is not removed
+            const lastInput = inputs[inputs.length - 1];
+            if (lastInput !== input) {
+                lastInput.remove();
+            }
+        }
+        showCvAsImage()
+
+    });
+
+    //add list deta to cv==============================================================================================
+    document.getElementById("addToCv2_"+buttonIdCount2).addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+        let count1=0;
+        // create new div class  send to adde forme
+        const container2 = document.getElementById("righttDetails");
+        const newDiv = document.createElement("div");
+        newDiv.id = "div2_"+formCount2;
+        newDiv.classList.add("dive_CV_right");
+        container2.appendChild(newDiv);
+
+       
+        // Add form title (List Name)
+        const title = document.createElement("h3");
+        title.textContent = input.value;
+        title.classList.add("CV_Details_title");
+        newDiv.appendChild(title);
+
+        // Add all input values (except the main list name input)
+            const inputs = newForm.querySelectorAll("input[type='text']");
+                inputs.forEach((field) => {
+                    if (field !== input ) {
+                        const detail = document.createElement("p");
+                        detail.classList.add("p_detail");
+                        detail.textContent = field.value;
+                        newDiv.appendChild(detail);
+                    }
+                count1++;
+
+    });
+    showCvAsImage()
+   
+
+    });
+
+
+     //remove details from CV=======================================================================
+  
+     removeFromCv.addEventListener("click", function (event) {
+        event.preventDefault(); 
+        
+        const container2 = document.getElementById("leftDetails");
+        const lastDiv = container2.lastElementChild;
+
+        if (lastDiv) {
+            container2.removeChild(lastDiv);
+        }
+        showCvAsImage()
+    });
+
+
+formCount2++;
+buttonIdCount2++;
+listCount3++;
+
+
+    
 });

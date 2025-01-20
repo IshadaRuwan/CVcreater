@@ -23,10 +23,23 @@
     <link rel="stylesheet" href="cvStyle.css" />
     <link rel="stylesheet" href="formStyle.css" />
     <link rel="stylesheet" href="cvRightSide.css" />
+   
+  
   </head>
   <body>
     <div class="filing_area">
+      
+    
       <div class="leftSide" id="leftSide">
+        <div class="color-palette">
+
+          <button class="color-option" id="changeColorButton-r" style="background-color: rgb(63, 4, 4)" ></button>
+          <button class="color-option" id="changeColorButton-b" style="background-color: rgb(12, 12, 61)"></button>
+          <button class="color-option" id="changeColorButton-g" style="background-color: rgb(8, 59, 12)" ></button>
+          <button class="color-option" id="changeColorButton-y" style="background-color: rgb(0, 0, 0)"></button>
+         
+          
+      </div>
         <div id="PerDet" contenteditable="true">PERSONAL DETAILS</div>
 
         <div class="cv_contact" id="cv_contact_Div">
@@ -115,8 +128,9 @@
         <!-- this is right SIde OF CV -->
         <div class="rightSide" id="rightSide">
           <h1>Right Side</h1>
+         
 
-          <div>
+          <div class="profileForme">
             <div class="" id="profilNam" contenteditable="true">PROFILE</div>
             <div id="profileDetaislCv"  contenteditable="true"> plese enter about......</div>
           </div>
@@ -132,7 +146,7 @@
       <div class="cvAsImage">
 
         <div class="cvAsIUmageArea" id="displayArea" >
-                <div class="diplayCvImg" id="diplayCvImg"></div>
+          <div id="imagePreview"></div>
         </div>
 
        
@@ -144,14 +158,14 @@
         <div class="left">
           <div class="image">
             <!-- this is  rfile image and coloer -->
-            <div class="color"><div id="name">NAme</div></div>
+            <div class="color"><div id="name">NAME</div></div>
             <div class="colerCurve"></div>
             <div class="profileImg"></div>
           </div>
           <div
             class="contact-list"
             id="contacList"
-            style="background-color: green"
+           
           >
             <div id="contctListTopic">PERSONAL DETAILS</div>
             <!-- this is contact list -->
@@ -167,10 +181,10 @@
           </div>
         </div>
         <div class="right">
-          <h2>this is right</h2>
+          
           <div class="rightDetails" id="righttDetails">
            <!-- thius is details -->
-            <div class="proifile">
+            <div class="proifile" id="proifile">
               <h2 id="profileName">PROFILE</h2>
               <p id="profileDetaisl">details......</p>
 
@@ -183,7 +197,7 @@
     </div>
     <button id="download">Download as PDF</button>
 
-    <script src="script.js"></script>
-    <script src="RightSideScript.js"></script>
+    <script src="script.js" ></script>
+    <script src="RightSideScript.js" defer></script>
   </body>
 </html>

@@ -2,13 +2,61 @@ body {
     font-family: Arial, sans-serif;
 }
 .cvAsImage{
-    width: 100%;
-    height: auto;
+    width: 50%;
+
+ display: flex;
+ justify-content: flex-start;
+ border: 2px solid black;
+
+}
+
+
+
+/* coler chuse */
+.color-option{
+  
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 40%;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.color-palette{
+    margin-top: 40px ;
     display: flex;
-    background-color: #f1f3f3;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.cvAsIUmageArea{
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    border: 2px solid green;
 }
 #imagePreview{
+    margin-left: -150px;
+    margin-top: -30%;
+    transform: scale(0.5 );
+    display: flex;
+    
+   
+}
+/* //profile viw */
+.profileForme{
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    
+}
+.profileForme #profilNam{
     width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid ;
+    border-color: #00ffdd;
+    font-weight: bold;
 }
 
 
@@ -337,20 +385,7 @@ border: 2px solid blue;
 }
 
 /* cv ass image aerea */
-.cvAsIUmageArea{
-    width: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 40px;
 
-    background-color: blue;
-    height: auto;
-   
-    transform: scale(0.7);
-}
 .diplayCvImg{
-    width: auto;
-    height: auto;
-    border: 3px solid black;
+    
 }
