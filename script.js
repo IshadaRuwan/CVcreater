@@ -4,7 +4,15 @@ let buttonIdCount = 0;
 let divCount1=0;
 let divCount2=0;
 
+window.onload = function() {
+    displayMasage();
+};
 
+// hide err msagfe
+
+function messageOK(){
+    document.getElementById("masage").style.display = "none";
+}
 //coloer chnage 
 
 document.getElementById("changeColorButton-r").addEventListener("click", function () {
@@ -13,6 +21,8 @@ document.getElementById("changeColorButton-r").addEventListener("click", functio
     document.documentElement.style.setProperty('--main-color2', 'rgb(219, 161, 161)'); 
     document.documentElement.style.setProperty('--main-color3', 'rgba(63, 4, 4, 0.616)');
     document.documentElement.style.setProperty('--main-color4', ' rgb(99, 99, 99);');
+    showCvAsImage()
+
 });
 
 document.getElementById("changeColorButton-b").addEventListener("click", function () {
@@ -21,6 +31,8 @@ document.getElementById("changeColorButton-b").addEventListener("click", functio
     document.documentElement.style.setProperty('--main-color2', 'rgb(155, 218, 255)'); // New text color
     document.documentElement.style.setProperty('--main-color3', 'rgba(12, 12, 61, 0.795)'); 
     document.documentElement.style.setProperty('--main-color4 ', 'rgb(99, 99, 99)');
+    showCvAsImage()
+
 });
 
 document.getElementById("changeColorButton-g").addEventListener("click", function () {
@@ -29,6 +41,8 @@ document.getElementById("changeColorButton-g").addEventListener("click", functio
     document.documentElement.style.setProperty('--main-color2', 'rgb(173, 219, 161)'); // New text color
     document.documentElement.style.setProperty('--main-color3', 'rgba(8, 59, 12, 0.582)'); 
     document.documentElement.style.setProperty('--main-color4', ' rgb(39, 39, 39)');
+    showCvAsImage()
+
 });
 
 document.getElementById("changeColorButton-y").addEventListener("click", function () {
@@ -37,6 +51,8 @@ document.getElementById("changeColorButton-y").addEventListener("click", functio
     document.documentElement.style.setProperty('--main-color2', 'rgb(175, 175, 175)'); // New text color
     document.documentElement.style.setProperty('--main-color3', 'rgba(0, 0, 0, 0.719)');
     document.documentElement.style.setProperty('--main-color4', 'rgb(82, 82, 82)');
+    showCvAsImage()
+
 });
 
 
@@ -424,6 +440,7 @@ document.getElementById("listAddButton").addEventListener("click", function(){
        
         // Add form title (List Name)
         const title = document.createElement("h3");
+        title.contentEditable="true"
         title.textContent = input.value;
         title.classList.add("CV_Details_title");
         newDiv.appendChild(title);
@@ -434,6 +451,7 @@ document.getElementById("listAddButton").addEventListener("click", function(){
                     if (field !== input ) {
                         const detail = document.createElement("p");
                         detail.classList.add("p_detail");
+                        detail.contentEditable="true"
                         detail.textContent = field.value;
                         newDiv.appendChild(detail);
                     }
@@ -899,6 +917,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
         const title = document.createElement("h3");
         title.textContent = input.value;
         title.classList.add("CV_Details_title");
+        title.contentEditable = "true";
         newDiv.appendChild(title);
 
         // Add all input values (except the main list name input)
@@ -906,6 +925,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
                 inputs.forEach((field) => {
                     if (field !== input ) {
                         const detail = document.createElement("p");
+                        detail.contentEditable = "true";
                         detail.classList.add("p_detail");
                         detail.textContent = field.value;
                         newDiv.appendChild(detail);

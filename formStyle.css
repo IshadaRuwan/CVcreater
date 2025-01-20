@@ -2,14 +2,66 @@ body {
     font-family: Arial, sans-serif;
 }
 .cvAsImage{
-    width: 50%;
+    width: auto;
 
  display: flex;
  justify-content: flex-start;
- border: 2px solid black;
+ /* border: 2px solid black; */
 
 }
+.addAtherDetaisl{
+    margin: 50px auto 0px;
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+}
 
+/* display massage  */
+
+.model{
+    
+    position: fixed; /* Fixed position */
+    margin: 10% 28%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    background-color: #fff7b0; /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    border: 4px solid rgb(255, 0, 0);
+ 
+}
+.message {
+  
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+}
+#messageOK {
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5347;
+    color: white;
+}
+
+#messageOK:hover {
+    background-color: #3d0d0d;
+}
+
+.RightSideName{
+     margin: 50px auto 0px;
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+}
 
 
 /* coler chuse */
@@ -23,6 +75,10 @@ body {
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+.color-option:hover{
+    transform: scale(1.5);
+}
+
 .color-palette{
     margin-top: 40px ;
     display: flex;
@@ -34,13 +90,14 @@ body {
     width: auto;
     display: flex;
     justify-content: flex-start;
-    border: 2px solid green;
+   
 }
 #imagePreview{
     margin-left: -150px;
     margin-top: -30%;
     transform: scale(0.5 );
     display: flex;
+    
     
    
 }
@@ -49,13 +106,15 @@ body {
     width: 600px;
     margin: 20px auto;
     padding: 20px;
+    border: 3px solid var(--main-color);
     
 }
+
 .profileForme #profilNam{
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 2px solid ;
-    border-color: #00ffdd;
+    border-bottom: 2px solid var(--main-color) ;
+    
     font-weight: bold;
 }
 
@@ -66,11 +125,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--main-color);
     font-size: 24px;
     padding: 20px 0;
-    border-bottom: 1px solid rgb(255, 0, 0);
-    text-decoration: underline 2px solid white;
+    font-size: 30px;
+    font-weight: bold;
+    /* text-decoration: underline 2px solid var(--main-color); */
     
 }
 /* use fore contact list add */
@@ -97,7 +157,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     margin-top: 10px;
-    border:  1px solid black;
+    border-bottom:  4px solid  var(--main-color);
 }
 #cv_contact > :first-child i{
     margin-left: -21px;
@@ -111,25 +171,26 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border:  1px solid rgb(195, 255, 195);
+    
     
 }
 .item i{
     margin-left: 10px;
-    border:  1px solid rgb(0, 60, 255);
+   
 }
 .item input{
     margin-top: 2%;
     width: 80%;
     margin-left: 7%;
-    border:  1px solid rgb(140, 211, 26);animation: enterDetaisl 1s forwards;
+    
+    animation: enterDetaisl 1s forwards;
 }
 .contactList{
     margin-left: 20px;
     width: 80%;
     display: flex;
     justify-content: center;
-    border:  1px solid rgb(236, 20, 12);
+    
 
 
 }
@@ -158,17 +219,20 @@ body {
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid rgb(100, 0, 0);
+
     margin-top:5%;
 }
 .addConToCvButt button{
     width: 40%;
     text-align: center;
-    background-color: #ffffff;
-    border: 1px solid black;
+    background-color:var(--main-color);
+    color: var(--main-color2);
+
     height: 40px;
     cursor: pointer;
     border-radius: 7px;
+    border: 1px solid black;
+
 }
 .addConToCvButt  button:hover{
     transform: scale(1.2);
@@ -197,13 +261,13 @@ body {
     margin-top: 10px;
     align-items: center;
     justify-content: space-around;
-    border:  1pX solid black;
+    /* border:  1pX solid black; */
 }
 .button-group {
     display: flex;
     gap: 10px; 
     margin-top: 10px;
-    border:  1pX solid rgb(129, 12, 12);
+    /* border:  1pX solid rgb(129, 12, 12); */
     padding-left: 7%;
 }
 .add_button 
@@ -222,7 +286,7 @@ body {
     margin-bottom: 10px;
     font-size: 40px ;
     font-family: bold;
-    border: 2px solid rgb(109, 109, 109);
+    /* border: 2px solid rgb(109, 109, 109); */
     font-weight: 1000;
     opacity: 80%;
 }
@@ -239,7 +303,7 @@ body {
     margin-bottom: 10px;
     font-size: 40px ;
     font-family: bold;
-    border: 2px solid rgb(109, 109, 109);
+    /* border: 2px solid rgb(109, 109, 109); */
     font-weight: 1000;
     opacity: 80%;
 
@@ -248,8 +312,9 @@ body {
 .addToCv ,.removeFromCv{
     width: 40%;
     text-align: center;
-    background-color: #ffffff;
-    border: 1px solid black;
+    background-color:var(--main-color);
+    color: var(--main-color2);
+    /* border: 1px solid black; */
     height: 40px;
     cursor: pointer;
     border-radius: 7px;
@@ -307,11 +372,14 @@ body {
 }
 /* form area style  */
 .newfrom{
+margin: 10px auto;
+padding: 10px auto;
 display: flex;
 width: 100%;
 flex-direction: column;
 height: auto;
-border: 2px solid blue;
+padding-bottom: 10px;
+border-bottom: 4px solid var(--main-color);
 
 }
 
@@ -320,7 +388,8 @@ border: 2px solid blue;
 #listAddButton , #removeListButton ,#listAddButtonToRight , #removeListButtonRigth{
     width: 40%;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--main-color);
+    color: var(--main-color2);
     border: 1px solid black;
     height: 40px;
     cursor: pointer;
@@ -329,7 +398,7 @@ border: 2px solid blue;
 }
 .listAddBttonDiv{
     margin-top: 5%;
-    border-top: 5px solid black;
+    margin-bottom: 5%;
     padding-top: 5%;
     display: flex;
     width: 100%;
@@ -341,7 +410,6 @@ border: 2px solid blue;
     width: 100%;
     /* justify-content:space-evenly; */
     margin: 20px auto;
-    border: 1px solid #00ffdd;
     box-sizing: border-box;
 
 
@@ -367,7 +435,8 @@ border: 2px solid blue;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    background-color: green;
+    background: linear-gradient(to right, var(--main-color2) 70%, var(--main-color) );
+    /* background-color: var(--main-color2); */
     height: auto;
 }
 .leftSide h1{
@@ -380,7 +449,7 @@ border: 2px solid blue;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: yellow;
+    background: linear-gradient(to right , white , rgb(226, 226, 226));
     height: auto;
 }
 

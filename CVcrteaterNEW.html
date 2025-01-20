@@ -28,6 +28,14 @@
   </head>
   <body>
     <div class="filing_area">
+      <div class="model" id="masage">
+        <div class="masage">
+          <h1>Your CV is ready below</h1>
+            <p>Please fill in the fields to add details to your CV. After that, click the button below to download your CV as a PDF.</p>
+            <h3>If you want, you can also edit the CV below</h3>
+            <button id="messageOK" onclick="messageOK()">OK</button>
+        </div>
+      </div>
       
     
       <div class="leftSide" id="leftSide">
@@ -116,7 +124,7 @@
           <button onclick="removeAllCntactFromCV()">REMOVE LAST ADED</button>
         </div>
 
-        <h1>ADD OTHER DETALS</h1>
+        <div class="addAtherDetaisl">ADD OTHER DETALS</div>
 
         <div class="listAddBttonDiv" id="listAddBttonDiv">
           <button id="listAddButton">ADD NEW LIST</button>
@@ -127,7 +135,7 @@
 
         <!-- this is right SIde OF CV -->
         <div class="rightSide" id="rightSide">
-          <h1>Right Side</h1>
+          <div class="RightSideName">RIGHT SIDE</div>
          
 
           <div class="profileForme">
@@ -185,8 +193,8 @@
           <div class="rightDetails" id="righttDetails">
            <!-- thius is details -->
             <div class="proifile" id="proifile">
-              <h2 id="profileName">PROFILE</h2>
-              <p id="profileDetaisl">details......</p>
+              <h2 id="profileName" contenteditable="true">PROFILE</h2>
+              <p id="profileDetaisl" contenteditable="true">plese enter about......</p>
 
             </div>
 
