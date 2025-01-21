@@ -65,6 +65,9 @@ document.getElementById("changeColorButton-y").addEventListener("click", functio
 function showCvAsImage() {
 
     const cvContent = document.getElementById("content");
+    const download =document.getElementById("download1");
+
+    download.style.display = "block";
 
     // Use html2canvas to capture the CV as an image
     html2canvas(cvContent).then(canvas => {

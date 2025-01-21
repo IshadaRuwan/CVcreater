@@ -1,5 +1,34 @@
 body {
     font-family: Arial, sans-serif;
+    /* overflow-x: hidden; */
+}
+#download{
+
+    /* display: none; */
+    margin: 5px auto;
+ width: 100%;
+ height: auto;
+ padding: 2px;
+ background-color: var(--main-color);
+ font-size: 35px;
+ color: var(--main-color2);
+ margin-bottom: 10px;
+ 
+}
+#download:hover{
+    transform: scaleY(1.2);
+}
+#download1{
+    margin: 5px auto;
+     display: none; 
+     text-align: center;
+     align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: var(--main-color);
+    color: var(--main-color2);
+    text-decoration: none;
+
 }
 .cvAsImage{
     width: auto;
@@ -90,6 +119,7 @@ body {
     width: auto;
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
    
 }
 #imagePreview{
@@ -116,6 +146,13 @@ body {
     border-bottom: 2px solid var(--main-color) ;
     
     font-weight: bold;
+}
+.profileForme #profilNam:hover{
+    transform: scaleY(1.2)
+
+}
+#profileDetaislCv:hover {
+    transform: scaleY(1.2);
 }
 
 
