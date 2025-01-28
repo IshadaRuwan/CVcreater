@@ -49,6 +49,14 @@
           
       </div>
         <div id="PerDet" contenteditable="true">PERSONAL DETAILS</div>
+        <div class="imageupload" id="">
+          <label for="uploadImage" class="custom-upload-button" id="">Upload Image</label>
+          <input type="file" id="uploadImage" accept="image/*" style="display: none;">
+        </div>
+        <!-- <div class="custom-upload" id="custom-upload">
+
+        </div> -->
+
 
         <div class="cv_contact" id="cv_contact_Div">
           <form id="cv_contact">
@@ -145,7 +153,7 @@
 
           <div class="listAddBttonDiv" id="listAddBttonDivToRight">
             <button id="listAddButtonToRight">ADD NEW LIST</button>
-            <button id="removeListButton" onclick="removeList()">
+            <button id="removeListButton" onclick="removeListRight()">
               REMOVE LIST
             </button>
           </div>
@@ -169,7 +177,12 @@
             <!-- this is  rfile image and coloer -->
             <div class="color"><div id="name">NAME</div></div>
             <div class="colerCurve"></div>
-            <div class="profileImg"></div>
+            <div class="profileImg" id="imageContainer">
+              <span id="placeholderText">
+
+              </span>
+
+            </div>
           </div>
           <div
             class="contact-list"
@@ -198,6 +211,7 @@
               <p id="profileDetaisl" contenteditable="true">plese enter about......</p>
 
             </div>
+            <!-- <span clas="rightList" id="rightList"></span> -->
 
 
           </div>

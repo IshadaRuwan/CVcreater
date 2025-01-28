@@ -16,6 +16,10 @@
     border-bottom: 2px solid var(--main-color4);
 }
 
+.rightList{
+
+}
+
 
 .proifile p{
     display: flex;
@@ -98,6 +102,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+ 
+    margin-left:-15px ;
 }
 
 .CV_Details_title{
@@ -120,9 +126,30 @@
     
 }
 
+.CV_Details_title_sub{
+    box-sizing: border-box; 
+    height: auto; 
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--main-color3);
+    font-weight: bold;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    overflow: hidden; 
+    max-width: 100%;
+    margin: auto 15px;
+    /* border-bottom: 2px solid var(--main-color4);    */
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .listName{
     display: flex;
     margin: 0 10px;
+}
+.slistName{
+    display: flex;
+   
 }
 .leftDetails .rightDetails{
     background-color: #4caf50;

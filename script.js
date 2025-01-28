@@ -4,6 +4,40 @@ let buttonIdCount = 0;
 let divCount1=0;
 let divCount2=0;
 
+
+
+
+// upload image 
+
+const uploadInput = document.getElementById("uploadImage");
+// const imageContainer2 = document.getElementsById("custom-upload");
+const imageContainer = document.getElementById("imageContainer");
+const placeholderText = document.getElementById("placeholderText");
+
+uploadInput.addEventListener("change", function () {
+
+    const file = uploadInput.files[0];
+
+    if (file && file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+           
+            imageContainer.style.backgroundImage = `url(${e.target.result})`;
+            // imageContainer2.style.backgroundImage = `url(${e.target.result})`;
+            placeholderText.style.display = "none"; 
+        };
+        reader.readAsDataURL(file); 
+        
+    } else {
+        alert("Please upload a valid image file.");
+    }
+
+    showCvAsImage();
+   
+});
+
+
+
 window.onload = function() {
     displayMasage();
 };
@@ -135,13 +169,13 @@ contactTopicForm.addEventListener("input",function(){
 });
 
 const myname = document.getElementById("nameInput");
-const contactTopicCvname = document.getElementById("name")
+const contactTopicCvname = document.getElementById("name");
 
 
-myname.addEventListener("input",function(){
-    contactTopicCvname.innerHTML=myname.value;
-    showCvAsImage()
-});
+// myname.addEventListener("input",function(){
+//     contactTopicCvname.innerHTML=myname.value;
+//     showCvAsImage()
+// });
 
 // create add icon and contact to person details==============================
 
@@ -262,9 +296,9 @@ function addAllCntactToCV() {
     contactDivs.forEach((div) => {
         const icon = div.querySelector("i");
         const input = div.querySelector("input");
-
+        contactTopicCvname.innerHTML=myname.value;
         if (input.value.trim() !== ""){
-
+            
             const div = document.createElement("div");
             const div2= document.createElement("div");
             div.classList.add("cvEntry");
@@ -495,7 +529,7 @@ listCount1++;
 //==============================================================================================================
 
 // remove last adede list ======================================================================================
-function removeList(){
+function removeListRight(){
   const remList=   document.getElementById("newDiv_"+(formCount1-1));
   if(remList){
     remList.remove();
@@ -689,21 +723,21 @@ listCount1++;
 
 // remove list right side
 
-function removeList(){
-    const remList=   document.getElementById("newDiv_"+(formCount1-1));
+function removeListRight(){
+    const remList=   document.getElementById("newDiv2_"+(formCount2-1));
     if(remList){
       remList.remove();
-      formCount1--;
-      buttonIdCount--;
-      listCount1--;
+      formCount2--;
+      buttonIdCount2--;
+      listCount3--;
     }else{
       
     console.log("No list to remove");
     }
     // remopve details frm CV when all list remove 
-    const container2 = document.getElementById("leftDetails");
+    const container2 = document.getElementById("rightList");
           const lastDiv = container2.lastElementChild;
-  
+        
           if(lastDiv){
               container2.removeChild(lastDiv);
           }
@@ -812,6 +846,13 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
     input.placeholder= "ENTER THE LISTNAME";
     input.id = `list2${listCount3}`;
     console.log("input ID ",input.id);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const subinput = document.createElement("input");
+    subinput.type = "text";
+    subinput.classList.add("slistName")
+    subinput.placeholder= "ENTER THE SUBNAME";
+    subinput.id = `list_2${listCount3}`;
+    console.log("input ID ",subinput.id);
 
     const button = document.createElement("button");
     button.textContent = "+";
@@ -855,7 +896,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
 
     // Append the button container to the form
     newForm.appendChild(input);
-
+    newForm.appendChild(subinput);
     newForm.appendChild(buttonContainer);
     newForm.appendChild(buttonContainer2)
 
@@ -906,7 +947,7 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
     //add list deta to cv==============================================================================================
     document.getElementById("addToCv2_"+buttonIdCount2).addEventListener("click", function(event) {
         event.preventDefault();
-        console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+
         let count1=0;
         // create new div class  send to adde forme
         const container2 = document.getElementById("righttDetails");
@@ -923,10 +964,18 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
         title.contentEditable = "true";
         newDiv.appendChild(title);
 
+         // Add form title (List Name)
+         const subtitle = document.createElement("h2");
+         subtitle.textContent = subinput.value;
+         subtitle.classList.add("CV_Details_title_sub");
+         subtitle.contentEditable = "true";
+         newDiv.appendChild(subtitle);
+
         // Add all input values (except the main list name input)
             const inputs = newForm.querySelectorAll("input[type='text']");
+
                 inputs.forEach((field) => {
-                    if (field !== input ) {
+                    if (field !== input && field !== subinput ) {
                         const detail = document.createElement("p");
                         detail.contentEditable = "true";
                         detail.classList.add("p_detail");
