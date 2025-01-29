@@ -463,17 +463,34 @@ border-bottom: 4px solid var(--main-color);
 
 
 /* list add and list create button  */
-#listAddButton , #removeListButton ,#listAddButtonToRight , #removeListButtonRigth{
-    width: 40%;
+#listAddButton ,#listAddButtonToRight {
+    width: 70%;
     text-align: center;
     background-color: var(--main-color);
     color: var(--main-color2);
     border: 1px solid black;
     height: 40px;
     cursor: pointer;
-    border-radius: 7px;;
+    border-radius: 7px;
+    margin-left: 2%;
 
 }
+#removeListButton , #removeListButtonRigth{
+    width: 15%;
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--main-color2);
+    border: 1px solid black;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-right: 3%;
+}
+#listAddButton:hover ,#listAddButtonToRight:hover,#removeListButton:hover , #removeListButtonRigth:hover {
+    transform: scale(1.1);
+    border: 3px solid black;
+}
+
 .listAddBttonDiv{
     margin-top: 5%;
     margin-bottom: 5%;
