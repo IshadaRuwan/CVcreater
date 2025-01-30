@@ -310,6 +310,8 @@ body {
 
 }
 
+
+
 /* this div use fore add new forme  */
 .my_class .my_class_right{
     display: flex;
@@ -489,6 +491,19 @@ border-bottom: 4px solid var(--main-color);
 #listAddButton:hover ,#listAddButtonToRight:hover,#removeListButton:hover , #removeListButtonRigth:hover {
     transform: scale(1.1);
     border: 3px solid black;
+}
+.addprofileInforetCV{
+    width: 40%;
+    height: 30%;
+    margin: 20px auto;
+    border-radius: 7px;
+    background-color: var(--main-color);
+    color: var(--main-color2);
+
+}
+.addprofileInforetCV:hover{
+    transform: scale(1.1);
+   
 }
 
 .listAddBttonDiv{

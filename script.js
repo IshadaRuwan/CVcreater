@@ -141,23 +141,27 @@ observer.observe(content, { childList: true, subtree: true });
 const profileDiv = document.getElementById("proifile")
 
 //chnage profle TITle
-const contactTopicProflr =document.getElementById("profilNam");
-const contactTopicProfle = document.getElementById("profileName")
-contactTopicProflr.addEventListener("input",function(){
+
+// contactTopicProflr.addEventListener("input",function(){
     
-        contactTopicProfle.innerHTML=contactTopicProflr.innerHTML
-        showCvAsImage()
-   });
+        
+//         showCvAsImage()
+//    });
 
 //change Profl NAme 
-const contactTopicProflrP =document.getElementById("profileDetaislCv");
+function enterProfileInfore(){
+    const contactTopicProflr =document.getElementById("profilNam");
+const contactTopicProfle = document.getElementById("profileName")
+    const contactTopicProflrP =document.getElementById("profileDetaislCv");
 const contactTopicProfleP = document.getElementById("profileDetaisl")
-contactTopicProflrP.addEventListener("input",function(){
+
     
         contactTopicProfleP.innerHTML=contactTopicProflrP.innerHTML
+        contactTopicProfle.innerHTML=contactTopicProflr.innerHTML
         showCvAsImage()
-    });
+   
 
+}
 
 
 //this use for edidt persanal details topic as youer choice=====================================
@@ -798,7 +802,7 @@ document.getElementById('download').addEventListener('click', function () {
     
     // Define options for html2pdf
     const opt = {
-        margin:       [0,0,0,-0.5],
+        margin:       [0,0,0,-0.6],
         filename:     'my-web-page.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 3, scrollY: 0, x:247.5, y: 0 },
@@ -814,6 +818,24 @@ document.getElementById('download').addEventListener('click', function () {
 
 //===============================================================================================================================
 
+
+// document.getElementById("addElementTitle").addEventListener('click',function(){
+
+//     const container = document.getElementById("rightSide");
+//     const newDiv = document.createElement("div");
+//     const listAddButtonDiv = document.getElementById("addaelmentTitleDiv");
+//     newDiv.id = "newDiv2_"+formCount2;
+//     newDiv.classList.add("my_class");
+//     container.insertBefore(newDiv,listAddButtonDiv);
+
+
+//     const input = document.createElement("input");
+//     input.type = "text";
+//     input.classList.add("listName")
+//     input.placeholder= "ENTER THE LISTNAME";
+//     input.id = `list2${listCount3}`;
+//     console.log("input ID ",input.id);
+// })
 
 
 let formCount2=0;
@@ -842,8 +864,9 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
 
     const input = document.createElement("input");
     input.type = "text";
+    input.title ="If you need to add a main topic, enter it below, or leave it blank.";
     input.classList.add("listName")
-    input.placeholder= "ENTER THE LISTNAME";
+    input.placeholder= "ENTER THE MAIN TOPIC  ";
     input.id = `list2${listCount3}`;
     console.log("input ID ",input.id);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -956,13 +979,18 @@ document.getElementById("listAddButtonToRight").addEventListener("click", functi
         newDiv.classList.add("dive_CV_right");
         container2.appendChild(newDiv);
 
-       
-        // Add form title (List Name)
+
+        
+
+       if( input.value !==''){
         const title = document.createElement("h3");
         title.textContent = input.value;
         title.classList.add("CV_Details_title");
         title.contentEditable = "true";
         newDiv.appendChild(title);
+       }
+        // Add form title (List Name)
+        
 
          // Add form title (List Name)
          const subtitle = document.createElement("h2");
